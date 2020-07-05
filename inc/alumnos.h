@@ -26,19 +26,28 @@ extern "C" {
 /*=====[Definition macros of public constants]===============================*/
 
 /*=====[Public function-like macros]=========================================*/
-
 /*=====[Definitions of public data types]====================================*/
 
+//! Estructura para la informacion de un alumno
 typedef struct alumno_s {
-    char apellidos[30];
-    char nombres[30];
-    char documento[11];
+    char apellidos[30]; //!< Apellido del alumno
+    char nombres[30];   //!< Nombre del alumno
+    char documento[11]; //!< Documento del alumno
 } const * alumno_t;
 
 /*=====[Definitions of public global variables]==============================*/
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+/**
+ * @brief Convierte los datos del alumno en una cadena JSON 
+ * 
+ * @param   cadena  Puntero a la cadena de salida
+ * @param   espacio Cantidad de bytes disponibles en la cadena de salida 
+ * @param   alumno  Puntero a la estrucutura de entrada con los datos del alumno
+ * @return  true    Los datos del alumnos se serializaron correctamente
+ * @return  false   No se pudieron serializar los datos por falta de espacio
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
 bool SerializarAlumnos(char * cadena, size_t espacio);

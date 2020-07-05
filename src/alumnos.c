@@ -37,11 +37,13 @@ static const struct alumno_s PABLO_SEVERINI = {
     .documento = "31.045.507",
 };
 
+//! Vector instanciado con todos los alumnos
 const alumno_t ALUMNOS[] = {
     &ESTEBAN_VOLENTINI,
     &PABLO_SEVERINI,
 };
 
+//! Cantidad de alumnos en vector alumnos
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 
 /*=====[Definitions of private global variables]=============================*/
@@ -51,7 +53,6 @@ const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 /*=====[Implementations of public functions]=================================*/
 
 /*=====[Implementations of interrupt functions]==============================*/
-
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     int resultado;
     const char FORMATO[] = "{"
